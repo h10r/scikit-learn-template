@@ -25,10 +25,8 @@ class Classifier():
 			self.Y = []
 
 			self.generate( self.data_source.db )
-			
-		self.cross_validation()
-
-		self.save_classifier_to_cache()
+			self.cross_validation()
+			self.save_classifier_to_cache()
 
 	def load_classifier_from_cache(self):
 		try:
@@ -117,3 +115,6 @@ class Classifier():
 			color, percentage = res
 			print( color + "\t" + str(int(100*percentage)).zfill(2) + "%" )
 		print()
+
+		return clf_predict
+		
